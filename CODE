@@ -1,0 +1,82 @@
+#include<pic.h>
+void delay(unsigned int x )
+{
+while(x--);
+}
+void main()
+{
+int a,b,c,d,e;
+int seg[]={0X01,0X02,0X04,0X08,0X10,0X20,0X40,0X80},j,k;
+TRISB=0X00;
+PORTB=0X00;
+while(1)
+{
+for(a=0;a<=2;a++)
+{
+PORTB=0XFF;//blink
+delay(500000);
+PORTB=0X00;
+delay(500000);
+}
+for(b=0;b<=2;b++)
+{
+for(j=0;j<=7;j++)
+{
+PORTB=seg[j];     //ascending
+delay(500000);
+PORTB=0X00;
+delay(500000);
+}
+}
+for(c=0;c<=2;c++)
+{
+for(k=7;k>=0;k--)
+{
+PORTB=seg[k];  // decsending
+delay(500000);
+PORTB=0X00;
+delay(500000);
+}
+}
+// outertocenter
+for(d=0;d<=2;d++)
+{
+PORTB=0X81;
+delay(500000);
+PORTB=0X00;
+delay(500000);
+PORTB=0X42;
+delay(500000);
+PORTB=0X00;
+delay(500000);
+PORTB=0X24;
+delay(500000);
+PORTB=0X00;
+delay(500000);
+PORTB=0X18;
+delay(500000);
+PORTB=0X00;
+delay(500000);
+}
+for(e=0;e<=2;e++)
+{
+// center to outer
+PORTB=0X18;
+delay(500000);
+PORTB=0X00;
+delay(500000);
+PORTB=0X24;
+delay(500000);
+PORTB=0X00;
+delay(500000);
+PORTB=0X42;
+delay(500000);
+PORTB=0X00;
+delay(500000);
+PORTB=0X81;
+delay(500000);
+PORTB=0X00;
+delay(500000);
+}
+}
+}
