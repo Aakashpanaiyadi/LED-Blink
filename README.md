@@ -1,9 +1,9 @@
 # LED-Blink
-🔹 Project Description
+Project Description
 
 This project is written in Embedded C for a PIC microcontroller and tested in Proteus simulation software. The program controls LEDs connected to PORTB of the PIC, creating different LED patterns using simple delay loops.
 
-🔹 How it Works
+How it Works
 
 Blinking – All LEDs on PORTB turn ON and OFF repeatedly.
 
@@ -17,7 +17,7 @@ Center to Outer Pattern – LEDs light up starting from the center and move towa
 
 A simple delay function is used to control the speed of LED transitions.
 
-🔹 Tools Used
+Tools Used
 
 PIC Microcontroller (with pic.h library)
 
